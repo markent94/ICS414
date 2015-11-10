@@ -26,7 +26,6 @@ function myTimer() {
     document.getElementById("demo").innerHTML = d.toLocaleTimeString();
 }
 
-
 var x = document.getElementById("demo");
 
 function getLocation() {
