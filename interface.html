@@ -31,8 +31,8 @@
                 <input type="text" name="yCoord" id="yCoord">
                 <br>
             </div>
-            <input type="button" onclick="getCurrentLocation()" value="Current Location">
-            <input type="button" onclick="getNewLocation()" value="New Location">
+            <input type="button" onclick="changeBackground(getCurrentLocation())" value="Current Location">
+            <input type="button" onclick="changeBackground(getNewLocation())" value="New Location">
         </form>
     </div>
 
@@ -44,5 +44,34 @@
     <div class="container">
         <p id="something"></p>
     </div>
+
+    <script>
+
+        function changeBackground(number) {
+            switch (number) {
+                case 0:
+                    document.body.style.backgroundColor = "blue";
+                    break;
+                case 1:
+                    document.body.style.backgroundColor = "green";
+                    break;
+                case 2:
+                    document.body.style.backgroundColor = "pink";
+                    break;
+                case 3:
+                    document.body.style.backgroundColor = "yellow";
+                    break;
+                case 4:
+                    document.body.style.backgroundColor = "brown";
+                    break;
+                case 5:
+                    document.body.style.backgroundColor = "red";
+                    break;
+                case 6:
+                    document.body.style.backgroundColor = "red";
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
