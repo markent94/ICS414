@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part Two</title>
+
+    <link rel="stylesheet" type="text/css" href="../bs/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../bs/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <script type="text/javascript" src="interface.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <form action="http://localhost:63342/test/interface.html">
+        <input type="submit" value="Menu">
+    </form>
+</div>
+
+<script>
+    var a = 0;
+    var b = 0;
+
+    var Array1 = [21.294846, 21.297614, 21.299940, 21.308444, 21.363877, 21.262820];
+    var Array2 = [-157.813323, -157.841039, -157.819161, -157.853346, -157.899807, -157.824653];
+
+//    var temp = setInterval(updateArrayIndex(), 1000);
+    var myVar = setInterval(getInteger(Array1[a], Array2[b]), 1000);
+
+//    function updateArrayIndex() {
+//        a++;
+//        b++;
+//    }
+
+    function changeBackground(number) {
+        switch (number) {
+            case 0:
+                document.body.style.backgroundColor = "blue";
+                break;
+            case 1:
+                document.body.style.backgroundColor = "green";
+                break;
+            case 2:
+                document.body.style.backgroundColor = "pink";
+                break;
+            case 3:
+                document.body.style.backgroundColor = "yellow";
+                break;
+            case 4:
+                document.body.style.backgroundColor = "brown";
+                break;
+            case 5:
+                document.body.style.backgroundColor = "red";
+                break;
+            case 6:
+                document.body.style.backgroundColor = "red";
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>

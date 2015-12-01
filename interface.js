@@ -2,8 +2,7 @@
  * Created by SlyMongoose on 11/8/2015.
  */
 
-
-
+var location;
 var url = document.getElementById("url").value;
 var cycleTime = document.getElementById("cycleTime").value;
 var range = document.getElementById("range").value;
