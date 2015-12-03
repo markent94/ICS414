@@ -60,8 +60,6 @@ function getInteger(xCoord, yCoord) {
         document.body.style.backgroundColor = "red";
     }
 
-    document.getElementById("answer").innerHTML = d;
-
     return d;
 }
 

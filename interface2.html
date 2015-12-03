@@ -11,7 +11,7 @@
     <script type="text/javascript" src="interface.js"></script>
 
 </head>
-<body>
+<body onload="setInterval(loadXMLDoc, 1000)">
 
 <div class="container">
     <form action="http://localhost:63342/test/interface.html">
@@ -19,20 +19,33 @@
     </form>
 </div>
 
+<div clas="container">
+    <p id="temp"></p>
+</div>
+
 <script>
-    var a = 0;
-    var b = 0;
 
-    var Array1 = [21.294846, 21.297614, 21.299940, 21.308444, 21.363877, 21.262820];
-    var Array2 = [-157.813323, -157.841039, -157.819161, -157.853346, -157.899807, -157.824653];
+    function loadXMLDoc() {
 
-//    var temp = setInterval(updateArrayIndex(), 1000);
-    var myVar = setInterval(getInteger(Array1[a], Array2[b]), 1000);
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for older browsers
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var result = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                    return val.replace(/<\/?b>/g,'');
+                });
 
-//    function updateArrayIndex() {
-//        a++;
-//        b++;
-//    }
+                document.getElementById("temp").innerHTML = result[0];
+            }
+        };
+        xmlhttp.open("GET", "http://markent94.github.io/-414Project/", true);
+        xmlhttp.send();
+    }
 
     function changeBackground(number) {
         switch (number) {
