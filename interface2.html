@@ -10,8 +10,17 @@
     <link rel="stylesheet" type="text/css" href="myStyle.css">
     <script type="text/javascript" src="interface.js"></script>
 
+    <style type ="text/css" >
+        .footer{
+            position: fixed;
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+    </style>
+
 </head>
-<body onload="setInterval(loadXMLDoc, 1000)">
+<body onload="getCycle()">
 
 <div class="container">
     <form action="http://localhost:63342/test/interface.html">
@@ -19,11 +28,29 @@
     </form>
 </div>
 
-<div clas="container">
+<div class="footer">
+    <form name="myForm">
+        <div class=”footer”">
+            <label for="cycleTime2">Cycle time: </label>
+            <input type="text" name="cycleTime2" id="cycletime2">
+    </form>
+</div>
+
+<div class="container">
     <p id="temp"></p>
 </div>
 
 <script>
+
+    function getCycle(){
+        var queryString = window.location.search;
+        queryString = queryString.substring(1);
+
+        var word = queryString.split("=");
+        var num = word[2].substring(0,word[2].lastIndexOf("&"));
+
+        setInterval(loadXMLDoc, (parseInt(num) * 1000));
+    }
 
     function loadXMLDoc() {
 
@@ -40,32 +67,32 @@
                     return val.replace(/<\/?b>/g,'');
                 });
 
-                document.getElementById("temp").innerHTML = result[0];
+                changeBackground(getInteger(result[0], result[1]));
             }
         };
-        xmlhttp.open("GET", "http://markent94.github.io/-414Project/", true);
+        xmlhttp.open("GET", "http://markent94.github.io/-414Project/?id=" + Math.random(), true);
         xmlhttp.send();
     }
 
     function changeBackground(number) {
         switch (number) {
             case 0:
-                document.body.style.backgroundColor = "blue";
+                document.body.style.backgroundColor = "#75C7F0";
                 break;
             case 1:
-                document.body.style.backgroundColor = "green";
+                document.body.style.backgroundColor = "#C3E619";
                 break;
             case 2:
                 document.body.style.backgroundColor = "pink";
                 break;
             case 3:
-                document.body.style.backgroundColor = "yellow";
+                document.body.style.backgroundColor = "#FFE666";
                 break;
             case 4:
-                document.body.style.backgroundColor = "brown";
+                document.body.style.backgroundColor = "#6347EB";
                 break;
             case 5:
-                document.body.style.backgroundColor = "red";
+                document.body.style.backgroundColor = "#9C8FA3";
                 break;
             case 6:
                 document.body.style.backgroundColor = "red";

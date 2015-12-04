@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <form name="myForm" onsubmit="return getLocation()">
+        <form name="myForm" action="http://localhost:63342/test/interface2.html">
             <div class=”form-group”>
                 <label for="url">Url: </label>
                 <input type="text" name="url" id="url">
@@ -24,20 +24,9 @@
                 <label for="range">Integer range: </label>
                 <input type="text" name="range" id="range">
                 <br>
-                <label for="xCoord">X coordinate: </label>
-                <input type="text" name="xCoord" id="xCoord">
-                <br>
-                <label for="yCoord">Y coordinate: </label>
-                <input type="text" name="yCoord" id="yCoord">
-                <br>
             </div>
             <input type="button" onclick="changeBackground(getCurrentLocation())" value="Current Location">
             <input type="button" onclick="changeBackground(getNewLocation())" value="New Location">
-        </form>
-    </div>
-
-    <div class="container">
-        <form action="http://localhost:63342/test/interface2.html">
             <input type="submit" value="Go to Interface">
         </form>
     </div>
