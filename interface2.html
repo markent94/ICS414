@@ -83,25 +83,25 @@
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                var result1 = (xmlhttp.responseText).match(/<h1>(.*?)<\/h1>/g).map(function(val){
-                    return val.replace(/<\/?b>/g,'');
-                });
-                
-                var result2 = (xmlhttp.responseText).match(/<h2>(.*?)<\/h2>/g).map(function(val){
-                    return val.replace(/<\/?b>/g,'');
-                });
-                
-                var result3 = (xmlhttp.responseText).match(/<h3>(.*?)<\/h3>/g).map(function(val){
-                    return val.replace(/<\/?b>/g,'');
-                });
-                
-                var result4 = (xmlhttp.responseText).match(/<h4>(.*?)<\/h4>/g).map(function(val){
-                    return val.replace(/<\/?b>/g,'');
-                });
-                
-                var result5 = (xmlhttp.responseText).match(/<h5>(.*?)<\/h5>/g).map(function(val){
-                    return val.replace(/<\/?b>/g,'');
-                });
+                var result1 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                     return val.replace(/<\/?b>/g,'');
+                 });
+
++                var result2 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
++                    return val.replace(/<\/?b>/g,'');
++                });
++                
++                var result3 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
++                    return val.replace(/<\/?b>/g,'');
++                });
++                
++                var result4 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
++                    return val.replace(/<\/?b>/g,'');
++                });
++                
++                var result5 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
++                    return val.replace(/<\/?b>/g,'');
++                });
                 
                 changeBackground((getInteger(result1[0], result1[1])), document.getElementById("box1"));
                 
