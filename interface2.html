@@ -83,63 +83,63 @@
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                var result1 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result1 = (xmlhttp.responseText).match(/<h1>(.*?)<\/h1>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
                 
-                var result2 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result2 = (xmlhttp.responseText).match(/<h2>(.*?)<\/h2>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
                 
-                var result3 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result3 = (xmlhttp.responseText).match(/<h3>(.*?)<\/h3>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
                 
-                var result4 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result4 = (xmlhttp.responseText).match(/<h4>(.*?)<\/h4>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
                 
-                var result5 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result5 = (xmlhttp.responseText).match(/<h5>(.*?)<\/h5>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
                 
-                changeBackground(getInteger(result1[0], result1[1]));
+                changeBackground((getInteger(result1[0], result1[1])), document.getElementById("box1"));
                 
-                changeBackground(getInteger(result2[0], result2[1]));
+                changeBackground((getInteger(result2[0], result2[1])), document.getElementById("box2"));
                 
-                changeBackground(getInteger(result3[0], result3[1]));
+                changeBackground((getInteger(result3[0], result3[1])), document.getElementById("box3"));
                 
-                changeBackground(getInteger(result4[0], result4[1]));
+                changeBackground((getInteger(result4[0], result4[1])), document.getElementById("box4"));
                 
-                changeBackground(getInteger(result5[0], result5[1]));
+                changeBackground((getInteger(result5[0], result5[1])), document.getElementById("box5"));
             }
         };
         xmlhttp.open("GET", "http://markent94.github.io/-414Project/?id=" + Math.random(), true);
         xmlhttp.send();
     }
 
-    function changeBackground(number) {
+    function changeBackground(number, elem) {
         switch (number) {
             case 0:
-                document.body.style.backgroundColor = "#75C7F0";
+                elem.style.backgroundColor = "#75C7F0";
                 break;
             case 1:
-                document.body.style.backgroundColor = "#C3E619";
+                elem.body.style.backgroundColor = "#C3E619";
                 break;
             case 2:
-                document.body.style.backgroundColor = "pink";
+                elem.body.style.backgroundColor = "pink";
                 break;
             case 3:
-                document.body.style.backgroundColor = "#FFE666";
+                elem.body.style.backgroundColor = "#FFE666";
                 break;
             case 4:
-                document.body.style.backgroundColor = "#6347EB";
+                elem.body.style.backgroundColor = "#6347EB";
                 break;
             case 5:
-                document.body.style.backgroundColor = "#9C8FA3";
+                elem.body.style.backgroundColor = "#9C8FA3";
                 break;
             case 6:
-                document.body.style.backgroundColor = "red";
+                elem.body.style.backgroundColor = "red";
                 break;
         }
     }
