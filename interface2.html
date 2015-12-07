@@ -28,28 +28,24 @@
     </form>
 </div>
 
-<div class="container">
-    <form action="http://localhost:63342/test/interface.html">
-        <input type="submit" value="Menu">
-    </form>
+<div id="box1">
+
 </div>
 
-<div class="container">
-    <form action="http://localhost:63342/test/interface.html">
-        <input type="submit" value="Menu">
-    </form>
+<div id="box2">
+
 </div>
 
-<div class="container">
-    <form action="http://localhost:63342/test/interface.html">
-        <input type="submit" value="Menu">
-    </form>
+<div id="box3">
+
 </div>
 
-<div class="container">
-    <form action="http://localhost:63342/test/interface.html">
-        <input type="submit" value="Menu">
-    </form>
+<div id="box4">
+
+</div>
+
+<div id="box5">
+
 </div>
 
 <div class="footer">
@@ -87,11 +83,35 @@
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                var result = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                var result1 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
                     return val.replace(/<\/?b>/g,'');
                 });
-
-                changeBackground(getInteger(result[0], result[1]));
+                
+                var result2 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                    return val.replace(/<\/?b>/g,'');
+                });
+                
+                var result3 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                    return val.replace(/<\/?b>/g,'');
+                });
+                
+                var result4 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                    return val.replace(/<\/?b>/g,'');
+                });
+                
+                var result5 = (xmlhttp.responseText).match(/<b>(.*?)<\/b>/g).map(function(val){
+                    return val.replace(/<\/?b>/g,'');
+                });
+                
+                changeBackground(getInteger(result1[0], result1[1]));
+                
+                changeBackground(getInteger(result2[0], result2[1]));
+                
+                changeBackground(getInteger(result3[0], result3[1]));
+                
+                changeBackground(getInteger(result4[0], result4[1]));
+                
+                changeBackground(getInteger(result5[0], result5[1]));
             }
         };
         xmlhttp.open("GET", "http://markent94.github.io/-414Project/?id=" + Math.random(), true);
