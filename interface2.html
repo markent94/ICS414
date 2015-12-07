@@ -26,6 +26,22 @@
 
 <div class="row">
     <div onmouseover="displayName('Jane', 'box2')" onmouseout="displayName(' ','box2')" class="col-md-12" id="box2" style="min-height: 170px;border:3px solid white;"> </div>
+<<<<<<< HEAD
+</div>
+
+<div class="row">
+    <div onmouseover="displayName('Ryan', 'box3')" onmouseout="displayName(' ','box3')" class="col-md-12" id="box3" style="min-height: 170px;border:3px solid white;"> </div>
+</div>
+
+<div class="row">
+    <div onmouseover="displayName('Bryan', 'box4')" onmouseout="displayName(' ','box4')" class="col-md-12" id="box4" style="min-height: 170px;border:3px solid white;"> </div>
+</div>
+
+<div class="row">
+    <div onmouseover="displayName('Sarah', 'box5')" onmouseout="displayName(' ','box5')" class="col-md-12" id="box5" style="min-height: 170px;border:3px solid white;"> </div>
+</div>
+=======
+>>>>>>> f68274ffb7dd3c4d30d2524736c91f90eed09721
 </div>
 
 <div class="row">
@@ -41,12 +57,17 @@
 </div>
 </div>
 
-<script>
-
+<<<<<<< HEAD
     function displayName(value, elem) {
         document.getElementById(elem).innerHTML = value;
     }
 
+=======
+<script>
+    function displayName(value, elem) {
+        document.getElementById(elem).innerHTML = value;
+    }
+>>>>>>> f68274ffb7dd3c4d30d2524736c91f90eed09721
     function getCycle(){
         var queryString = window.location.search;
         queryString = queryString.substring(1);
@@ -66,6 +87,7 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var result1 = (xmlhttp.responseText).match(/<h1>(.*?)<\/h1>/g).map(function(val){
                     return val.replace(/<\/?h1>/g,'');
+<<<<<<< HEAD
                 });
                 var result2 = (xmlhttp.responseText).match(/<h2>(.*?)<\/h2>/g).map(function(val){
                     return val.replace(/<\/?h2>/g,'');
@@ -88,6 +110,25 @@
 
                 changeBackground((getInteger(result4[0], result4[1])), document.getElementById("box4"));
 
+=======
+                });
+                var result2 = (xmlhttp.responseText).match(/<h2>(.*?)<\/h2>/g).map(function(val){
+                    return val.replace(/<\/?h2>/g,'');
+                });
+                 var result3 = (xmlhttp.responseText).match(/<h3>(.*?)<\/h3>/g).map(function(val){
+                    return val.replace(/<\/?h3>/g,'');
+                 });
+                var result4 = (xmlhttp.responseText).match(/<h4>(.*?)<\/h4>/g).map(function(val){
+                    return val.replace(/<\/?h4>/g,'');
+                });
+                var result5 = (xmlhttp.responseText).match(/<h5>(.*?)<\/h5>/g).map(function(val){
+                    return val.replace(/<\/?h5>/g,'');
+                });
+                changeBackground((getInteger(result1[0], result1[1])), document.getElementById("box1"));
+                changeBackground((getInteger(result2[0], result2[1])), document.getElementById("box2"));
+                changeBackground((getInteger(result3[0], result3[1])), document.getElementById("box3"));
+                changeBackground((getInteger(result4[0], result4[1])), document.getElementById("box4"));
+>>>>>>> f68274ffb7dd3c4d30d2524736c91f90eed09721
                 changeBackground((getInteger(result5[0], result5[1])), document.getElementById("box5"));
             }
         };
