@@ -7,14 +7,6 @@ var url = document.getElementById("url").value;
 var cycleTime = document.getElementById("cycleTime").value;
 var range = document.getElementById("range").value;
 
-// potential cycle time function
-//myVar = setInterval(myTimer, (cycleTime * 1000));
-
-//function myTimer() {
-//    var d = new Date();
-//    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-//}
-
 function getInteger(xCoord, yCoord) {
     var homeX = 21.294846;
     var homeY = -157.813323;
@@ -57,29 +49,8 @@ function getInteger(xCoord, yCoord) {
 
     if(c > 1) {
         d = 6;
-        document.body.style.backgroundColor = "red";
     }
 
     return d;
-}
-
-function getCurrentLocation() {
-    var a = 6;
-    if (navigator.geolocation) {
-        a = navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        document.getElementById("answer").innerHTML = "Geolocation is not supported by this browser.";
-    }
-    return a;
-}
-
-function showPosition(position) {
-    var a = getInteger(position.coords.latitude, position.coords.longitude);
-    return a;
-}
-
-function getNewLocation() {
-    var a = getInteger(document.getElementById("xCoord").value, document.getElementById("yCoord").value);
-    return a;
 }
 
